@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode9
+xcode_project: InputValidation.xcodeproj
+xcode_scheme: InputValidation
+xcode_sdk: iphonesimulator
+os: osx
+
