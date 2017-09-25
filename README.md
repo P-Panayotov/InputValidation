@@ -48,7 +48,7 @@ for value:InputValue in values {
 
 ```
 
-## Convert usr input to different value type
+## Convert user input to a specific value type
 
 ``` swift
 
@@ -117,4 +117,15 @@ for value:InputValue in values {
         print("value:'\(value)' of type \(value.type.rawValue) is empty")
     }
 }
+```
+
+## Install with carthage
+
+Add InputValidation into your Cartfile
+```
+github "PanPanayotov/InputValidation"
+```
+Build 
+``` bash
+carthage update
 ```
