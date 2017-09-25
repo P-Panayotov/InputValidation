@@ -16,9 +16,9 @@ By default input validation can be used on all of the following value types:
 * Bool
 
 ## What is InputValidation
-InputValidation is a very light Swift library to help developers validate their user input. Library works with all value types used by developers to collect user input. The goal is to perform any validation on any value type. For example you can perform regex match on `Int` `Float` `Double` `Bool` and `String`, or to convert them to the value type you may require.
+InputValidation is a very light weight library written in Swift, and aimed to help developers with the boring task of validating some user input. My goal was to make this as generic as possible without complicating it, and at the same time to be able to perform any validation on any value type. For example you can evaluate regex match on `Int` `Float` `Double` `Bool` and `String`, or to convert InputValues from one type to another.
 
-## Get value type from the user input
+## Value type from the user input
 
 ``` swift
 
@@ -48,7 +48,7 @@ for value:InputValue in values {
 
 ```
 
-## Convert user input to a specific value type
+## Convert user input to specific value type
 
 ``` swift
 
@@ -101,7 +101,7 @@ userInput.isGreaterThanOrEqualTo(9) // returns true
 
 ```
 
-## Performing regular expression check
+## Evaluate regular expressions
 ``` swift
 let values = [12, 45.245, "hello", "", NSNumber(value: true), NSNumber(value: 12), NSNumber(value: 65.28), false, true]
 
@@ -119,7 +119,7 @@ for value:InputValue in values {
 }
 ```
 
-## Install with carthage
+## Installing with carthage
 
 Add InputValidation into your Cartfile
 ```
