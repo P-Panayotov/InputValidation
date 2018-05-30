@@ -14,14 +14,13 @@
 		5A043BEB1F753C460021149B /* InputValidation_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A043BE21F753C460021149B /* InputValidation_macOS.framework */; };
 		5A043BF01F753C460021149B /* InputValidation_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BEF1F753C460021149B /* InputValidation_macOSTests.swift */; };
 		5A043BF21F753C470021149B /* InputValidation_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A043BE41F753C460021149B /* InputValidation_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A043BF91F753C700021149B /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
-		5A043BFA1F753C730021149B /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
-		5A043BFB1F753C740021149B /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
 		5A043C0B1F753DBA0021149B /* InputValidation_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A043C021F753DBA0021149B /* InputValidation_tvOS.framework */; };
 		5A043C101F753DBA0021149B /* InputValidation_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043C0F1F753DBA0021149B /* InputValidation_tvOSTests.swift */; };
 		5A043C121F753DBA0021149B /* InputValidation_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A043C041F753DBA0021149B /* InputValidation_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A043C1A1F753DC50021149B /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
-		5A043C1B1F753DC50021149B /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
+		5A7A02AC20BEBB0C00CCB76C /* InputValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043B891F7510880021149B /* InputValidationTests.swift */; };
+		5A7A02AD20BEBB0D00CCB76C /* InputValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043B891F7510880021149B /* InputValidationTests.swift */; };
+		5A7A02AE20BEBB1E00CCB76C /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
+		5A7A02AF20BEBB1F00CCB76C /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A043BDB1F753B770021149B /* InputValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,7 +344,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Panayot Panayotov";
 				TargetAttributes = {
 					5A043B7A1F7510880021149B = {
@@ -455,7 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A043BFA1F753C730021149B /* InputValue.swift in Sources */,
 				5A043B8A1F7510880021149B /* InputValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A043BF91F753C700021149B /* InputValue.swift in Sources */,
+				5A7A02AE20BEBB1E00CCB76C /* InputValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +470,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A043BFB1F753C740021149B /* InputValue.swift in Sources */,
 				5A043BF01F753C460021149B /* InputValidation_macOSTests.swift in Sources */,
+				5A7A02AC20BEBB0C00CCB76C /* InputValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A043C1A1F753DC50021149B /* InputValue.swift in Sources */,
+				5A7A02AF20BEBB1F00CCB76C /* InputValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,8 +487,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A043C1B1F753DC50021149B /* InputValue.swift in Sources */,
 				5A043C101F753DBA0021149B /* InputValidation_tvOSTests.swift in Sources */,
+				5A7A02AD20BEBB0D00CCB76C /* InputValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +527,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -536,6 +535,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -589,6 +589,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -596,6 +597,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -708,7 +710,7 @@
 		5A043BF41F753C470021149B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -732,7 +734,7 @@
 		5A043BF51F753C470021149B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
