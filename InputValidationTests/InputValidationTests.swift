@@ -22,6 +22,8 @@ class InputValidationTests: XCTestCase {
         XCTAssertFalse((1321321 as InputValue).matches(regex: "^[a-zA-Z]+$"), "Expected 1321321.matches(regex: '^[a-zA-Z]+$') to be false")
         XCTAssertFalse((1321321 as InputValue).matches(regex: "^[a-zA-Z]+$"), "Expected 1321321.matches(regex: '^[a-zA-Z]+$') to be false")
         XCTAssertFalse(("askSSdjhDask" as InputValue).matches(regex: "^[0-9]+$"), "Expected askSSdjhDask.matches(regex: '^[0-9]+$') to be false")
+        XCTAssertFalse((true as InputValue).matches(regex: "^[0-9]+$"), "Expected true.matches(regex: '^[0-9]+$') to be false")
+        XCTAssertFalse((false as InputValue).matches(regex: "^[0-9]+$"), "Expected false.matches(regex: '^[0-9]+$') to be false")
     }
     
     func testNumber() {
@@ -44,10 +46,14 @@ class InputValidationTests: XCTestCase {
     }
     
     func testBool() {
-        XCTAssertNotNil(true.toBool, "Expected true.toBool to be 'true' not nil")
-        XCTAssertNotNil(false.toBool, "Expected true.toBool to be 'false' not nil")
         XCTAssertTrue(true.toBool!, "Expected true.toBool to be true")
-        XCTAssertFalse(false.toBool!, "Expected true.toBool to be false")
+        XCTAssertFalse(false.toBool!, "Expected false.toBool to be false")
+        XCTAssertTrue("true".toBool!, "Expected 'true'.toBool to be 'true'")
+        XCTAssertFalse("false".toBool!, "Expected 'false'.toBool to be false")
+        XCTAssertTrue("TRUE".toBool!, "Expected 'TRUE'.toBool to be 'true'")
+        XCTAssertFalse("FALSE".toBool!, "Expected 'FALSE'.toBool to be false")
+        XCTAssertTrue("True".toBool!, "Expected 'True'.toBool to be 'true'")
+        XCTAssertFalse("False".toBool!, "Expected 'False'.toBool to be false")
         makeValueTypeTest(type: .bool)
     }
     
