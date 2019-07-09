@@ -47,6 +47,18 @@ for value:InputValue in values {
 
 
 ```
+Above example prints:
+```
+Int
+Double
+String
+value:'' of type string is empty
+Number
+Number
+Number
+Boolean
+Boolean
+```
 
 ## Convert user input to specific value type
 
@@ -54,27 +66,32 @@ for value:InputValue in values {
 
 let userInput = "1"
 
-if let stringValue = userInput.toString {
-  print("String value: \(stringValue)")
-}
+print("String value: \(userInput.toString)")
 
 if let intValue = userInput.toInt {
-  print("Int value: \(intValue)")
+    print("Int value: \(intValue)")
 }
 
 if let floatValue = userInput.toFloat {
-  print("Float value: \(floatValue)")
+    print("Float value: \(floatValue)")
 }
 
 if let doubleValue = userInput.toDouble {
-  print("Double value: \(doubleValue)")
+    print("Double value: \(doubleValue)")
 }
 
 if let boolValue = userInput.toBool {
-  print("Boolean value: \(boolValue)")
+    print("Boolean value: \(boolValue)")
 }
 
 
+```
+Above example prints:
+```
+String value: 1
+Int value: 1
+Float value: 1.0
+Double value: 1.0
 ```
 
 ## Comparison operations
@@ -118,6 +135,33 @@ for value:InputValue in values {
     }
 }
 ```
+Above example prints:
+```
+value:'12' of type int did not match '^[a-z]+$'
+value:'45.245' of type double did not match '^[a-z]+$'
+value:'hello' of type string is matching '^[a-z]+$'
+value:'' of type string is empty
+value:'1' of type number did not match '^[a-z]+$'
+value:'12' of type number did not match '^[a-z]+$'
+value:'65.28' of type number did not match '^[a-z]+$'
+value:'false' of type bool did not match '^[a-z]+$'
+value:'true' of type bool did not match '^[a-z]+$'
+```
+
+## Converting InputValue to boolean
+
+### Important
+If **InputValue** cannot be converted to a boolean value type calling `toBool` will return nil. See example below
+
+```
+1.toBool // nil
+0.toBool // nil
+"Some text".toBool // nil
+"true".toBool // true
+"True".toBool // true
+"TRUE".toBool // true
+12.345.toBool // nil
+```
 
 ## Installing with carthage
 
@@ -129,3 +173,8 @@ Build
 ``` bash
 carthage update
 ```
+
+
+## Contributing and reporting an issue
+Happy to see more contributors on board as well as any suggstions on improving the frameworks. Simply open a pull request on **develop** branch.
+Feel free to open an issue if you find one. 

@@ -89,21 +89,21 @@ public protocol InputValue: CustomStringConvertible {
 
 extension InputValue {
 
-    public var isFloat: Bool { return self.type == .float }
-    public var isBool: Bool { return self.type == .bool }
-    public var isDouble: Bool { return self.type == .double }
-    public var isNumber: Bool { return self.type == .number }
-    public var isInt: Bool { return self.type == .int }
-    public var isString: Bool { return self.type == .string }
-    public var toInt: Int? { return NumberFormatter().number(from: self.toString)?.intValue }
-    public var toFloat: Float? { return NumberFormatter().number(from: self.toString)?.floatValue }
-    public var toDouble: Double? { return NumberFormatter().number(from: self.toString)?.doubleValue }
+    public var isFloat: Bool { return type == .float }
+    public var isBool: Bool { return type == .bool }
+    public var isDouble: Bool { return type == .double }
+    public var isNumber: Bool { return type == .number }
+    public var isInt: Bool { return type == .int }
+    public var isString: Bool { return type == .string }
+    public var toInt: Int? { return NumberFormatter().number(from: toString)?.intValue }
+    public var toFloat: Float? { return NumberFormatter().number(from: toString)?.floatValue }
+    public var toDouble: Double? { return NumberFormatter().number(from: toString)?.doubleValue }
     public var toBool: Bool? { return nil }
     public var toString: String { return String(describing: self) }
-    public var isEmpty: Bool { return self.toString.replacingOccurrences(of: " ", with: "").count == 0 }
+    public var isEmpty: Bool { return toString.replacingOccurrences(of: " ", with: "").count == 0 }
 
     public func isBetween<T: InputValue, X: InputValue>(min: T, max: X) -> Bool {
-        guard let thisFloat = self.toFloat,
+        guard let thisFloat = toFloat,
             let minFloat = min.toFloat,
             let maxFloat = max.toFloat,
             self.type != .bool,
@@ -115,10 +115,10 @@ extension InputValue {
     }
 
     public func isLessThan<T: InputValue>(test: T) -> Bool {
-        guard let thisFloat = self.toFloat,
+        guard let thisFloat = toFloat,
             let testFloat = test.toFloat,
-            self.type != .string,
-            self.type != .bool,
+            type != .string,
+            type != .bool,
             test.type != .bool else {
                 return false
         }
@@ -126,10 +126,10 @@ extension InputValue {
     }
 
     public func isLessThanOrEqualTo<T: InputValue>(test: T) -> Bool {
-        guard let thisFloat = self.toFloat,
+        guard let thisFloat = toFloat,
             let testFloat = test.toFloat,
-            self.type != .string,
-            self.type != .bool,
+            type != .string,
+            type != .bool,
             test.type != .bool else {
                 return false
         }
@@ -137,10 +137,10 @@ extension InputValue {
     }
 
     public func isGreaterThan<T: InputValue>(test: T) -> Bool {
-        guard let thisFloat = self.toFloat,
+        guard let thisFloat = toFloat,
             let testFloat = test.toFloat,
-            self.type != .string,
-            self.type != .bool,
+            type != .string,
+            type != .bool,
             test.type != .bool else {
                 return false
         }
@@ -148,10 +148,10 @@ extension InputValue {
     }
 
     public func isGreaterThanOrEqualTo<T: InputValue>(test: T) -> Bool {
-        guard let thisFloat = self.toFloat,
+        guard let thisFloat = toFloat,
             let testFloat = test.toFloat,
-            self.type != .string,
-            self.type != .bool,
+            type != .string,
+            type != .bool,
             test.type != .bool else {
                 return false
         }
@@ -159,7 +159,8 @@ extension InputValue {
     }
 
     public func matches(regex: String) -> Bool {
-        return self.toString.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+        if type == .bool { return false }
+        return toString.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
 }
 
@@ -185,5 +186,5 @@ extension Double: InputValue {
 
 extension Bool: InputValue {
     public var type: ValueType { return .bool }
-    public var toBool: Bool? { return Bool(self.description) }
+    public var toBool: Bool? { return self }
 }
