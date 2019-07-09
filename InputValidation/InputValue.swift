@@ -99,7 +99,7 @@ extension InputValue {
     public var toFloat: Float? { return NumberFormatter().number(from: toString)?.floatValue }
     public var toDouble: Double? { return NumberFormatter().number(from: toString)?.doubleValue }
     public var toBool: Bool? { return nil }
-    public var toString: String { return String(describing: self) }
+    public var toString: String { return description }
     public var isEmpty: Bool { return toString.replacingOccurrences(of: " ", with: "").count == 0 }
 
     public func isBetween<T: InputValue, X: InputValue>(min: T, max: X) -> Bool {
@@ -166,6 +166,7 @@ extension InputValue {
 
 extension String: InputValue {
     public var type: ValueType { return .string }
+    public var toBool: Bool? { return Bool(description.lowercased()) }
 }
 
 extension NSNumber: InputValue {
