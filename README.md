@@ -167,7 +167,7 @@ If **InputValue** cannot be converted to a boolean value type calling `toBool` w
 
 Add InputValidation into your Cartfile
 ```
-github "PanPanayotov/InputValidation"
+github "P-Panayotov/InputValidation"
 ```
 Build 
 ``` bash
